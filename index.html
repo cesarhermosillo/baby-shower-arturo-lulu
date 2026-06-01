@@ -9,7 +9,7 @@
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
     body {
-      background: #d8e8f5;
+      background: linear-gradient(to bottom, #000000 0%, #ffffff 100%);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -220,6 +220,16 @@
     /* ── Decorative dividers ── */
     .wavy { font-size:22px; margin:4px 0; opacity:.5; }
 
+    /* ── Baby photos (replace bears) ── */
+    .baby-photos { display:flex; justify-content:center; align-items:center; gap:16px; }
+    .baby-photos img {
+      width:118px; height:118px;
+      object-fit:cover;
+      border-radius:50%;
+      border:4px solid #fff;
+      box-shadow:0 6px 18px rgba(0,0,0,.25);
+    }
+
     /* ── Arrow ── */
     .arrow { font-size:38px; color:#f5a500; }
 
@@ -301,7 +311,10 @@
       te invitan a celebrar<br>la llegada de su bebé
     </p>
 
-    <div class="float" style="font-size:76px;margin-top:16px;letter-spacing:8px">🐻 🐻</div>
+    <div class="float baby-photos" style="margin-top:16px">
+      <img src="boy.jpeg" alt="niño">
+      <img src="girl.jpeg" alt="niña">
+    </div>
 
     <span class="hint">toca para continuar ▶</span>
   </div>
@@ -452,7 +465,10 @@
       <span style="color:#f5b800">tan especial!</span>
     </p>
 
-    <div class="float" style="font-size:72px;margin:16px 0;letter-spacing:8px">🐻 🐻</div>
+    <div class="float baby-photos" style="margin:16px 0">
+      <img src="boy.jpeg" alt="niño">
+      <img src="girl.jpeg" alt="niña">
+    </div>
 
     <div class="ribbon" style="font-size:18px">🎀 ¡Te esperamos! 🎀</div>
 
