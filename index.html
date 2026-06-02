@@ -533,8 +533,20 @@
     else if (result[current]) goTo(result[current]);
   }
 
+  // Número del anfitrión (WhatsApp): +52 1 492 225 3372
+  const HOST_WA = '5214922253372';
+
+  function notifyHost(option) {
+    const msg = option === 'boy'
+      ? '¡Hola! 👋 Confirmo mi asistencia al Baby Shower de Arturo & Lulu. Elegí NIÑO 🖤 — me tocan PAÑALES 🧷'
+      : '¡Hola! 👋 Confirmo mi asistencia al Baby Shower de Arturo & Lulu. Elegí NIÑA 🤍 — me tocan TOALLITAS HÚMEDAS 🧻';
+    const url = 'https://wa.me/' + HOST_WA + '?text=' + encodeURIComponent(msg);
+    window.open(url, '_blank');
+  }
+
   function choose(option) {
     clearTimeout(timer);
+    notifyHost(option);
     goTo(option === 'boy' ? 's7' : 's8');
   }
 
