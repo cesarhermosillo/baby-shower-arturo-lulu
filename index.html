@@ -500,6 +500,7 @@
 
   let current = 's1';
   let timer   = null;
+  let chosenChoice = null;   // 'boy' | 'girl' — guardado para avisar al final
 
   function goTo(id) {
     const from = document.getElementById(current);
@@ -530,7 +531,10 @@
     const seq = { s1:'s2', s2:'s3', s3:'s4', s4:'s5', s5:'s6' };
     const result = { s7:'s9', s8:'s9' };
     if (seq[current])    goTo(seq[current]);
-    else if (result[current]) goTo(result[current]);
+    else if (result[current]) {
+      notifyHost(chosenChoice);   // último paso: abrir WhatsApp tras ver qué llevar
+      goTo(result[current]);
+    }
   }
 
   // Número del anfitrión (WhatsApp): +52 1 492 225 3372
@@ -546,7 +550,7 @@
 
   function choose(option) {
     clearTimeout(timer);
-    notifyHost(option);
+    chosenChoice = option;   // se avisa al anfitrión hasta el último paso
     goTo(option === 'boy' ? 's7' : 's8');
   }
 
