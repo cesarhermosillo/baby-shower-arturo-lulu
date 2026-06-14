@@ -66,6 +66,33 @@
     .s7 { background: linear-gradient(175deg,#eef0f2 0%,#fafafa 100%); }
     .s8 { background: linear-gradient(175deg,#fafafa 0%,#f0f0f0 100%); }
     .s9 { background: linear-gradient(175deg,#fffbe8 0%,#fff3e0 100%); }
+    .swin  { background: linear-gradient(175deg,#fffbe8 0%,#ffe9b8 60%,#fff3e0 100%); }
+    .slose { background: linear-gradient(175deg,#eef0f2 0%,#f6f6f6 60%,#fafafa 100%); }
+    .sgift { background: linear-gradient(175deg,#fafafa 0%,#f2f2f2 50%,#ffffff 100%); }
+    .smap  { background: #fafafa; }
+
+    /* ── Map screenshot box ── */
+    .map-box {
+      width: 90%;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,.18);
+      border: 3px solid #fff;
+      margin: 12px auto 4px;
+    }
+    .map-box img { width:100%; display:block; }
+    .map-link {
+      display:inline-block;
+      margin-top:10px;
+      background:#000;
+      color:#fff;
+      font-weight:900;
+      font-size:13px;
+      padding:9px 18px;
+      border-radius:20px;
+      text-decoration:none;
+      box-shadow:0 4px 10px rgba(0,0,0,.2);
+    }
 
     /* ── Bunting ── */
     .bunting { display:flex; justify-content:center; margin-bottom:6px; gap:0; }
@@ -332,7 +359,7 @@
         <span class="icon">📅</span>
         <div>
           <div class="label">Fecha</div>
-          <div class="val">6 de Junio 2026</div>
+          <div class="val">28 de Junio 2026</div>
         </div>
       </div>
       <hr class="divider">
@@ -340,7 +367,7 @@
         <span class="icon">📍</span>
         <div>
           <div class="label">Lugar</div>
-          <div class="val" style="font-size:16px;line-height:1.4">Retorno Mariano Ceballos #13<br>Unidad CTM Atzacoalco<br>CP 07090, ALCALDÍA<br>GUSTAVO A MADERO</div>
+          <div class="val" style="font-size:16px;line-height:1.4">Netzahualcóyotl 110<br>Zona A, CNOP<br>98053 Zacatecas, Zac.</div>
         </div>
       </div>
       <hr class="divider">
@@ -349,6 +376,7 @@
         <div>
           <div class="label">Hora</div>
           <div class="val">3:00 pm</div>
+          <div class="val" style="font-size:13px;color:#888;font-weight:700">(15:00 hrs)</div>
         </div>
       </div>
     </div>
@@ -449,6 +477,76 @@
     <span class="hint hint-dark">toca para continuar ▶</span>
   </div>
 
+  <!-- ░░ SLIDE — Revelación: ¡Le atinaste! (Niño) ░░ -->
+  <div class="slide swin" id="s7r">
+    <span class="star" style="top:9%;left:10%">✦</span>
+    <span class="star" style="top:12%;right:11%">✦</span>
+    <span class="star" style="bottom:60px;left:10%">⭐</span>
+    <span class="star" style="bottom:60px;right:10%">⭐</span>
+
+    <div class="float" style="font-size:60px;margin-bottom:6px">🎉</div>
+    <div class="f yellow" style="font-size:46px;line-height:1.05">¡FELICIDADES!</div>
+    <p style="font-size:22px;font-weight:800;color:#555;margin:10px 0">Le atinaste 🎯</p>
+    <div style="font-size:24px;margin:6px 0">🖤 🤍 🖤</div>
+    <p style="font-size:20px;font-weight:800;color:#555">Nuestro bebé es</p>
+    <div class="f blue" style="font-size:54px;line-height:1.05">¡NIÑO! 🖤</div>
+
+    <span class="hint hint-dark">toca para continuar ▶</span>
+  </div>
+
+  <!-- ░░ SLIDE — Revelación: ¡Lástima! (Niña) ░░ -->
+  <div class="slide slose" id="s8r">
+    <span class="star" style="top:9%;left:10%">✦</span>
+    <span class="star" style="top:12%;right:11%">✦</span>
+
+    <div class="float" style="font-size:58px;margin-bottom:6px">😅</div>
+    <div class="f grey" style="font-size:42px;line-height:1.05">¡Lástima!</div>
+    <p style="font-size:22px;font-weight:800;color:#555;margin:10px 0">No le atinaste 🙈</p>
+    <div style="font-size:24px;margin:6px 0">🖤 🤍 🖤</div>
+    <p style="font-size:20px;font-weight:800;color:#555">Nuestro bebé es</p>
+    <div class="f blue" style="font-size:54px;line-height:1.05">¡NIÑO! 🖤</div>
+
+    <span class="hint hint-dark">toca para continuar ▶</span>
+  </div>
+
+  <!-- ░░ SLIDE — Mensaje de regalo ░░ -->
+  <div class="slide sgift" id="sgift">
+    <div class="float" style="font-size:56px;margin-bottom:12px">🍼 🚼</div>
+
+    <div class="cloud-box" style="padding:24px 26px">
+      <p style="font-size:19px;font-weight:800;color:#444;line-height:1.6">
+        Tu presencia es lo más importante,
+        pero si deseas consentir a nuestro bebé
+        <span style="white-space:nowrap">🍼 🚼</span>
+        con un detalle, será recibido con mucho cariño.
+      </p>
+    </div>
+
+    <div style="font-size:24px;margin-top:16px">🤍 💛 🖤</div>
+
+    <span class="hint hint-dark">toca para continuar ▶</span>
+  </div>
+
+  <!-- ░░ SLIDE — Dirección & Mapa ░░ -->
+  <div class="slide smap" id="smap">
+    <div class="f pink" style="font-size:28px;margin-bottom:6px">📍 ¿Dónde?</div>
+
+    <p style="font-size:16px;font-weight:800;color:#444;line-height:1.45;margin-bottom:6px">
+      Netzahualcóyotl 110<br>Zona A, CNOP<br>98053 Zacatecas, Zac.
+    </p>
+
+    <div class="map-box">
+      <img src="mapa.png" alt="Mapa del lugar">
+    </div>
+
+    <a class="map-link"
+       href="https://www.google.com/maps/place/Sal%C3%B3n+De+Eventos/@22.7710069,-102.5932003,18z/data=!4m6!3m5!1s0x86824f55ee155845:0xc95d0f10ecc6999e!8m2!3d22.7710069!4d-102.5932003!16s%2Fg%2F11pdf29nm9"
+       target="_blank" rel="noopener"
+       onclick="event.stopPropagation()">🗺️ Abrir en Google Maps</a>
+
+    <span class="hint hint-dark">toca para continuar ▶</span>
+  </div>
+
   <!-- ░░ SLIDE 9 — Gracias ░░ -->
   <div class="slide s9" id="s9">
     <div class="bunting" style="margin-bottom:8px">
@@ -496,7 +594,8 @@
 <script>
   const AUTO_IDS   = ['s1','s2','s3','s4','s5'];   // auto-advance slides
   const AUTO_DELAY = 4200;                           // ms
-  const DOT_MAP    = { s1:0, s2:1, s3:2, s4:3, s5:4, s6:5, s7:6, s8:6, s9:6 };
+  const DOT_MAP    = { s1:0, s2:1, s3:2, s4:3, s5:4, s6:5,
+                       s7:6, s8:6, s7r:6, s8r:6, sgift:6, smap:6, s9:6 };
 
   let current = 's1';
   let timer   = null;
@@ -528,12 +627,16 @@
   }
 
   function nextSlide() {
-    const seq = { s1:'s2', s2:'s3', s3:'s4', s4:'s5', s5:'s6' };
-    const result = { s7:'s9', s8:'s9' };
-    if (seq[current])    goTo(seq[current]);
-    else if (result[current]) {
-      notifyHost(chosenChoice);   // último paso: abrir WhatsApp tras ver qué llevar
-      goTo(result[current]);
+    const seq = {
+      s1:'s2', s2:'s3', s3:'s4', s4:'s5', s5:'s6',
+      s7:'s7r', s8:'s8r',      // resultado → revelación (¿le atinaste?)
+      s7r:'sgift', s8r:'sgift',// revelación → mensaje de regalo
+      sgift:'smap'             // regalo → dirección + mapa
+    };
+    if (seq[current]) { goTo(seq[current]); return; }
+    if (current === 'smap') {
+      notifyHost(chosenChoice);   // último paso: abrir WhatsApp tras ver el lugar
+      goTo('s9');
     }
   }
 
@@ -542,8 +645,8 @@
 
   function notifyHost(option) {
     const msg = option === 'boy'
-      ? '¡Hola! 👋 Confirmo mi asistencia al Baby Shower de Arturo & Lulu. Elegí NIÑO 🖤 — me tocan PAÑALES 🧷'
-      : '¡Hola! 👋 Confirmo mi asistencia al Baby Shower de Arturo & Lulu. Elegí NIÑA 🤍 — me tocan TOALLITAS HÚMEDAS 🧻';
+      ? '¡Hola! 👋 Confirmo mi asistencia al Baby Shower de Arturo & Lulu. Elegí NIÑO 🖤 ¡Le atiné! — me tocan PAÑALES 🧷'
+      : '¡Hola! 👋 Confirmo mi asistencia al Baby Shower de Arturo & Lulu. Elegí NIÑA 🤍 (¡es NIÑO 🖤!) — me tocan TOALLITAS HÚMEDAS 🧻';
     const url = 'https://wa.me/' + HOST_WA + '?text=' + encodeURIComponent(msg);
     window.open(url, '_blank');
   }
