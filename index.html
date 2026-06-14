@@ -728,10 +728,19 @@
   // Intenta encender la música de inmediato (queda activa por defecto)
   startMusic();
 
-  // Respaldo: si el navegador bloqueó el autoplay, arranca en la primera interacción
-  document.getElementById('card').addEventListener('click', function() {
+  // Respaldo: el navegador bloquea el audio hasta la 1ª interacción del usuario.
+  // Escuchamos CUALQUIER gesto en toda la página para arrancar cuanto antes.
+  function unlockMusic() {
     if (musicWanted && music.paused) startMusic();
-  }, { once: false });
+    if (!music.paused) {
+      ['pointerdown','touchstart','keydown','click'].forEach(ev =>
+        document.removeEventListener(ev, unlockMusic, true)
+      );
+    }
+  }
+  ['pointerdown','touchstart','keydown','click'].forEach(ev =>
+    document.addEventListener(ev, unlockMusic, true)
+  );
 </script>
 </body>
 </html>
