@@ -305,7 +305,7 @@
   <audio id="bg-music" loop preload="auto">
     <source src="cancion.mp3" type="audio/mpeg">
   </audio>
-  <button id="music-toggle" title="Música" onclick="toggleMusic(event)">🔇</button>
+  <button id="music-toggle" title="Música" onclick="toggleMusic(event)">🔊</button>
 
 
   <!-- ░░ SLIDE 1 — ¡BABY SHOWER! ░░ -->
@@ -698,35 +698,39 @@
   // Kick off auto-advance for first slide
   timer = setTimeout(() => goTo('s2'), AUTO_DELAY);
 
-  /* ── Música de fondo ── */
+  /* ── Música de fondo (activa por defecto) ── */
   const music = document.getElementById('bg-music');
   const musicBtn = document.getElementById('music-toggle');
-  let musicReady = false;   // ya inició al menos una vez
+  let musicWanted = true;   // el usuario quiere música encendida por defecto
 
   function startMusic() {
+    if (!musicWanted) return;
     music.play().then(() => {
-      musicReady = true;
       musicBtn.textContent = '🔊';
     }).catch(() => {
-      // El navegador bloqueó el autoplay; esperará a otra interacción
+      // El navegador bloqueó el autoplay; arrancará en la primera interacción
     });
   }
 
   function toggleMusic(e) {
     if (e) e.stopPropagation();
     if (music.paused) {
+      musicWanted = true;
       music.play();
       musicBtn.textContent = '🔊';
     } else {
+      musicWanted = false;
       music.pause();
       musicBtn.textContent = '🔇';
     }
-    musicReady = true;
   }
 
-  // Inicia la música en la primera interacción del usuario con la tarjeta
+  // Intenta encender la música de inmediato (queda activa por defecto)
+  startMusic();
+
+  // Respaldo: si el navegador bloqueó el autoplay, arranca en la primera interacción
   document.getElementById('card').addEventListener('click', function() {
-    if (!musicReady) startMusic();
+    if (musicWanted && music.paused) startMusic();
   }, { once: false });
 </script>
 </body>
